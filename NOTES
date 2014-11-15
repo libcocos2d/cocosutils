@@ -1,0 +1,31 @@
+Compatibility.
+
+Should we maintain some form of compatibility with cocos2d-console ?
+
+This is the info on creating a new plugin for that project
+So we could design something that covers both models
+
+```python
+import cocos
+
+# Plugins should be a sublass of CCPlugin
+class CCPluginDeploy(cocos.CCPlugin):
+
+		# in default category
+        @staticmethod
+        def plugin_category():
+          return ""
+
+        @staticmethod
+        def plugin_name():
+          return "deploy"
+
+        @staticmethod
+        def brief_description():
+            return "Deploy the project to target."                
+
+        def run(self, argv, dependencies):
+            print "plugin called!"
+            print argv
+
+```
